@@ -305,9 +305,11 @@ export default function Home() {
                         </SelectContent>
                       </Select>
                     ) : (
-                      <Button onClick={() => setShowRootForm(true)} className="w-full sm:w-auto">
+                      <div className="flex justify-end w-full">
+                      <Button onClick={() => setShowRootForm(true)} className="w-fit ">
                         Create Root Menu
                       </Button>
+                      </div>
                     )
                   )}
 
