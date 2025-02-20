@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { ChevronRightIcon } from '@radix-ui/react-icons';
 import { Button } from '@/components/ui/button';
 import { MenuItemForm } from './menu-item-form';
-import { getMenus } from '@/lib/api/menu';
+import { fetchMenus } from '@/lib/api/menu';
 
 interface MenuItem {
   id: number;
@@ -37,7 +37,7 @@ export function MenuTree() {
   const loadMenus = async () => {
     try {
       setLoading(true);
-      const data = await getMenus();
+      const data = await fetchMenus();
       setMenus(data);
       setError(null);
     } catch (err) {
